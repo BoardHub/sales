@@ -1,9 +1,11 @@
 
-getData('1-HQI_l2aMsY0pR-xXpj6xgCwuJSI-PSR0Ln-zBoG9rM', function(result) {
+var spreadSheetKey = '1-HQI_l2aMsY0pR-xXpj6xgCwuJSI-PSR0Ln-zBoG9rM';
+
+getSheetData(spreadSheetKey, 1, function(result) {
 	sections = result.data;
 	sections = convertRowsToObj(sections);
 
-	getData('1APlBq-n2_6QoenQsCQkeYZCD6ErwbT_a-F7cWCZaTDk', function(result) {
+	getSheetData(spreadSheetKey, 2, function(result) {
 		charts = result.data;
 		charts = convertRowsToObj(charts);
 		onDataLoaded();
